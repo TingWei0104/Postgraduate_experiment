@@ -8,3 +8,7 @@
 Ranklib的使用過程網址如下  
 https://docs.google.com/document/d/1A23tIO1ONeFT0kbQ3oSyrL5WZY5uckyMNyynHH16iyA/edit?usp=sharing  
 "實際執行LTR測試結果"表示目前暫時的執行結果。  
+
+--20241022--
+修正bug-id編號，詳情請看"所有的bug-id編號.xlsx"  
+在"test_excel"中增加"merge_txt_for_fold.ipynb"，用於半輔助將訓練資料分成5-Fold，以及分為訓練以及測試集。  
