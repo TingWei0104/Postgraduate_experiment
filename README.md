@@ -12,3 +12,7 @@ https://docs.google.com/document/d/1A23tIO1ONeFT0kbQ3oSyrL5WZY5uckyMNyynHH16iyA/
 --20241022--
 修正bug-id編號，詳情請看"所有的bug-id編號.xlsx"  
 在"test_excel"中增加"merge_txt_for_fold.ipynb"，用於半輔助將訓練資料分成5-Fold，以及分為訓練以及測試集。  
+
+--20241025--  
+完成5個專案的SBFL整理。  
+將Chart的結果應用在另外4個的結果，發現全為1，但是label為0的結果，模型排名結果可能性在1.0，不太合理，可能要用normalize。  
