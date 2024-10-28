@@ -16,3 +16,6 @@ https://docs.google.com/document/d/1A23tIO1ONeFT0kbQ3oSyrL5WZY5uckyMNyynHH16iyA/
 --20241025--  
 完成5個專案的SBFL整理。  
 將Chart的結果應用在另外4個的結果，發現全為1，但是label為0的結果，模型排名結果可能性在1.0，不太合理，可能要用normalize。  
+
+--20241028--  
+新增"SBFL_excel_normalize"資料夾，用於將特徵改為0到1之間。  

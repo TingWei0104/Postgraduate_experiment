@@ -1,0 +1,14 @@
+create_SBFL_XXXXX_normalize.ipynb: 將實驗結果整理成excel使用，並加上標準化。
+excel_to_txt.ipynb: 將剛剛整理的excel轉成ranklib能夠讀取的檔案格式。
+merge_txt_for_fold.ipynb: 將訓練資料分群用
+
+"SBFL結果整理用"資料夾的
+APR_result_to_012.ipynb: 將APR的結果轉為012表示的list。
+SBFL_result_to_01.ipynb: 將"SBFL錯誤位置docx"的結果轉為01顯示。
+
+bug編號:
+chart:10001~10026
+closure:20001~20133
+math:30001~30106
+time:40001~40027
+lang:50001~50065
