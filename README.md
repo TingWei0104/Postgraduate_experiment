@@ -27,4 +27,5 @@ https://docs.google.com/document/d/1A23tIO1ONeFT0kbQ3oSyrL5WZY5uckyMNyynHH16iyA/
 並結合到原本整理出learning to rank的程式中試試看，讓輸出的excel有包含這些資料。    
 
 --20241106--
-在"20241105-整理學長資料用"資料夾中的"test.ipynb"有產生動態二微陣列的方法，以後可以再來看看怎麼操作，也有建立一個txt將資料寫入的方法。  
+在"20241105-整理學長資料用"資料夾中的"test.ipynb"有產生動態二微陣列的方法，以後可以再來看看怎麼操作，也有建立一個txt將資料寫入的方法。 
+之後有補上能一併輸出這是top多少的結果。   
