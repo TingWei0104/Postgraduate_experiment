@@ -1,0 +1,80 @@
+錯誤位置/chart/Chart_v1_FaultStatement.txt
+['2436']
+
+錯誤位置/chart/Chart_v2_FaultStatement.txt
+['182 183 184 185 186 187 379 380 381 382 383 384']
+
+錯誤位置/chart/Chart_v3_FaultStatement.txt
+['663 664 665']
+
+錯誤位置/chart/Chart_v4_FaultStatement.txt
+['10472']
+
+錯誤位置/chart/Chart_v5_FaultStatement.txt
+['162 163 164']
+
+錯誤位置/chart/Chart_v6_FaultStatement.txt
+['267']
+
+錯誤位置/chart/Chart_v7_FaultStatement.txt
+['276 277']
+
+錯誤位置/chart/Chart_v8_FaultStatement.txt
+['54']
+
+錯誤位置/chart/Chart_v9_FaultStatement.txt
+['797']
+
+錯誤位置/chart/Chart_v10_FaultStatement.txt
+['53']
+
+錯誤位置/chart/Chart_v11_FaultStatement.txt
+['67']
+
+錯誤位置/chart/Chart_v12_FaultStatement.txt
+['79']
+
+錯誤位置/chart/Chart_v13_FaultStatement.txt
+['361']
+
+錯誤位置/chart/Chart_v14_FaultStatement.txt
+['1400 1401 1473 1474 3740 3741 3823 3824']
+
+錯誤位置/chart/Chart_v15_FaultStatement.txt
+['4726 4727 4850 4851']
+
+錯誤位置/chart/Chart_v16_FaultStatement.txt
+['37 38 70']
+
+錯誤位置/chart/Chart_v17_FaultStatement.txt
+['268']
+
+錯誤位置/chart/Chart_v18_FaultStatement.txt
+['226 227 228 229 230 332 337']
+
+錯誤位置/chart/Chart_v19_FaultStatement.txt
+['1526 1596']
+
+錯誤位置/chart/Chart_v20_FaultStatement.txt
+['6']
+
+錯誤位置/chart/Chart_v21_FaultStatement.txt
+['270 399 400 401']
+
+錯誤位置/chart/Chart_v22_FaultStatement.txt
+['33 35 66 70 71 82']
+
+錯誤位置/chart/Chart_v23_FaultStatement.txt
+['0']
+
+錯誤位置/chart/Chart_v24_FaultStatement.txt
+['13']
+
+錯誤位置/chart/Chart_v25_FaultStatement.txt
+['10003 10004 10038 9936 9937 9971']
+
+錯誤位置/chart/Chart_v26_FaultStatement.txt
+['3908 3909']
+
+
+[[2436], [182, 183, 184, 185, 186, 187, 379, 380, 381, 382, 383, 384], [663, 664, 665], [10472], [162, 163, 164], [267], [276, 277], [54], [797], [53], [67], [79], [361], [1400, 1401, 1473, 1474, 3740, 3741, 3823, 3824], [4726, 4727, 4850, 4851], [37, 38, 70], [268], [226, 227, 228, 229, 230, 332, 337], [1526, 1596], [6], [270, 399, 400, 401], [33, 35, 66, 70, 71, 82], [0], [13], [10003, 10004, 10038, 9936, 9937, 9971], [3908, 3909]]
