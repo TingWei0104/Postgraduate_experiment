@@ -42,3 +42,8 @@ https://docs.google.com/document/d/1A23tIO1ONeFT0kbQ3oSyrL5WZY5uckyMNyynHH16iyA/
 目前已經弄出來了，使用的程式為"Chart_整理出top.ipynb"，更改其中的"SBFL_index"變數，來半自動產生出這些top資訊，並存到word檔案中。 
   
 出現問題了，top計算出問題了。  
+  
+--20241112--  
+top計算問題已解決，也已經將整個自動化處理完畢。
+目前已經將"20241105-整理學長資料用/chart_result"的所有透過"Chart整理_excel.ipynb"的所有東西放到更外部的"20241113"資料夾中，  
+反正不是在這個git中就是了。  
