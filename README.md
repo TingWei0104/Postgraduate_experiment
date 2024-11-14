@@ -47,3 +47,9 @@ https://docs.google.com/document/d/1A23tIO1ONeFT0kbQ3oSyrL5WZY5uckyMNyynHH16iyA/
 top計算問題已解決，也已經將整個自動化處理完畢。
 目前已經將"20241105-整理學長資料用/chart_result"的所有透過"Chart整理_excel.ipynb"的所有東西放到更外部的"20241113"資料夾中，  
 反正不是在這個git中就是了。  
+  
+"20241105-整理學長資料用"裡面的"SBFL_result_to_01.ipynb"就是把"Chart_整理出top.ipynb"整理出來的結果轉為0與1的二維list，用於後續的"create_SBFL_chart_normaliza.ipynb"。  
+  
+Chart已整理完成，目前將其掛入Ranklib試試看。  
+
+訓練結果如"20241105-整理學長資料用/chart_result/Cahrt應用於Ranklib-20241113.docx"所表示，訓練結果有一些的問題後面有提到一些後續的改善想法。
