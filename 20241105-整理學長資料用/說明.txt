@@ -1,0 +1,3 @@
+XXXX整理_excel.ipynb: 將project的原始檔案整理，並輸出每個bug_id的前200筆結果。
+
+XXXX_整理出top.ipynb: 將上面的程式碼得出的檔案，輸出每個不同的SBFL工具的結果，作為後續建立訓練資料所使用的list。
