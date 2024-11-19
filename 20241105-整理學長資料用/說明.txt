@@ -1,3 +1,16 @@
 XXXX整理_excel.ipynb: 將project的原始檔案整理，並輸出每個bug_id的前200筆結果。
 
 XXXX_整理出top.ipynb: 將上面的程式碼得出的檔案，輸出每個不同的SBFL工具的結果，作為後續建立訓練資料所使用的list。
+
+create_SBFL_XXXXX_normalize.ipynb: 將實驗結果整理成excel使用，並加上標準化。
+
+excel_to_txt.ipynb: 將剛剛整理的excel轉成ranklib能夠讀取的檔案格式。
+
+bug編號:
+chart:10001~10026
+closure:20001~20133
+math:30001~30106
+time:40001~40027
+lang:50001~50065
+
+combine組合共有188個(47個SBFL*4APR)
