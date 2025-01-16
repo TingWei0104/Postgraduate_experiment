@@ -64,3 +64,14 @@ Chart已整理完成，目前將其掛入Ranklib試試看。
 
 --20241120--  
 有問題，此專案先暫時擱置。  
+
+--20250115--
+此方法繼續，之後應該是新增一個"新實驗"的資料夾。  
+以及會增加astor的3種APR結果(jgenprog、jkali、jMutRepair)。  
+label改成:0、1、2、3，  
+分別表示"無SBFL且無patch"、"有SBFL且無patch"、"無SBFL且有patch"、"有SBFL且有patch"，  
+有patch比較重要，因此"有SBFL且無patch"設為1，"無SBFL且有patch"設為2。  
+使用的方法以"20241105-整理學長資料用"這個資料夾有的方法來進行。  
+目前先等待astor完成。
+
+之後打算看看astor的"DeepRepair"、"Cardumen"、"3sfix"能不能使用，如果不能的話那就先以先以新增(jgenprog、jkali、jMutRepair)這三個為主。  
