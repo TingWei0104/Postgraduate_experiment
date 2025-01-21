@@ -75,3 +75,8 @@ label改成:0、1、2、3，
 目前先等待astor完成。
 
 之後打算看看astor的"DeepRepair"、"Cardumen"、"3sfix"能不能使用，如果不能的話那就先以先以新增(jgenprog、jkali、jMutRepair)這三個為主。  
+
+--20250120--  
+將模型改進後的結果，有加上懷疑值的結果很差。  
+因此改成用"SBFL_chart_no_sus.txt"的結果做比較，發現會先針對SBFL都有在Top1找到的梯隊排序APR結果，之後再針對在Top-3找到的梯隊排序APR結果，以此類推。  
+後面加上"SBFL_chart_one_top.txt"的結果，從結果上來看能夠針對錯誤定位結果以及APR的修復結果來做整體的排名，這兩種方法都能作為後續的討論。  
