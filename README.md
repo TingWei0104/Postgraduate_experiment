@@ -103,3 +103,5 @@ label改成:0、1、2、3，
 之後乘以這個APR有沒有在這個bug_id生成patch(0,1)，這個數字就是當成這個APR在這個bug_id的成效當成是label。  
 
 可能的問題: 因為SBFL結果都是相同的，因此權重分數在同一個APR上都是一樣的，又因為每個APR，如ACS與Nopol都是用上相同的錯誤定位結果，它們的這個分數也是相同的，可能(0,1)改成以如ACS在chart總共1個plausible patch，就改成乘上1/26;Nopol有9個，就是乘上9/26。(不確定，先把東西做出來再判斷)。  
+
+這個新的ipynb檔案是"20250206-新增APR相關特徵/caculate_XXXXX_label.ipynb"所生成的，並且修正"create_SBFL_XXXXX_normaliza.ipynb"的輸出格式。  
