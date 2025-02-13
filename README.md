@@ -121,5 +121,17 @@ label改成:0、1、2、3，
 將數據執行後，整理分析的結果"20250206-新增APR相關特徵/chart/Chart應用Ranklib.docx"，根據結果來看，完全是錯誤的。 
 
 之後將APR統計分數作為其中一個feature，使用5個feature，label就如同"--20250206--"的說明。  
+測試結果在"chart/Chart應用Ranklib.docx"裡面。  
+不知道在哪一部分就搜尋: 驗證資料(Chart應用於Chart)、驗證資料(Chart應用於Closure)。  
+這兩個地方。  
+並且其中有使用Score這個指令，這個指令不像是使用"indri"順便進行排序，會是把每個pid中的每一個編號的預測分數顯示出來。  
+
+
+
 考慮結果與"20250206-新增APR相關特徵/使用多個APR特徵的結果/chart/chart排名結果_F3_one_top.xlsx"對照，這個使用方式請看"20250206-新增APR相關特徵/使用多個APR特徵的結果/chart/OLD_Chart應用Ranklib.docx"。  
+
+
+
+--20250213--  
+考慮top-10就不參考了，因此要改新的資料夾，新增一個"20250213去除top10與修正計算"資料夾。  
 
