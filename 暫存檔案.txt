@@ -1,0 +1,103 @@
+```bash=
+SCRIPT_DIR=$(pwd)
+
+#PID=$chart
+#BID=$2
+PID=chart
+PID2=Chart
+BID=1
+# ------------------
+# 檔案位置
+# 此處需要自行修正，自己的Defects4j當初拉到哪個資料夾。
+PROJECT_DIR=/home/ncyu/d4j_project/${PID}/${PID}_${BID}_buggy
+
+# 自己的defects4j的git clone位置在哪裡。
+D4J_HOME=~/defects4j
+
+# GZoltar的主程式路徑。
+# 每個人都不一樣，記得更改。
+GZOLTAR_AGENT_JAR=/home/ncyu/gzoltar/com.gzoltar.agent.rt/target/com.gzoltar.agent.rt-1.7.2-all.jar
+GZOLTAR_CLI_JAR=/home/ncyu/gzoltar/com.gzoltar.cli/target/com.gzoltar.cli-1.7.2-jar-with-dependencies.jar
+
+# 這裡是src_path的位置，此為SimFix提供，表示Defects4J的原始碼與測試檔案的路徑
+# 建議能從SimFix提供的檔案取得，位置在SimFix/d4j-nfo/src_path
+# 每個人抓下來的位置都不同
+src_path=/home/ncyu/src_path/
+# ------------------
+
+# 移動到要錯誤定位的檔案位置，例如Chart-1的檔案存放在哪裡。
+cd ${PROJECT_DIR}
+
+# 取得src_path檔案位置
+src_path_locate=${src_path}${PID}/${BID}.txt
+#echo "檔案位置： '${src_path_locate}'"
+build_path=$(head -n 2 "$src_path_locate" | tail -n 1)
+#echo "source code 位置： '${source}'"
+build_test_path=$(head -n 3 "$src_path_locate" | tail -n 1)
+#echo "test code 位置： '${test_path}'"
+
+# Checkout defects4j project
+# 這是defects4j經過compile之後的結果檔案，自己輸入，因為低版本的好像有問題。
+SRC_DIR=${PROJECT_DIR}${build_path}
+TEST_DIR=${PROJECT_DIR}${build_test_path}
+
+# 其他人提供的，不使用
+#TEST_DIR=${PROJECT_DIR}/$(defects4j export -p dir.bin.tests)
+
+LIB_DIR=$(defects4j export -p cp.test)
+
+#RELEVANT_TESTS_FILE=${D4J_HOME}/framework/projects/${PID}/relevant_tests/${BID}
+#RELEVANT_TESTS=$(cat ${RELEVANT_TESTS_FILE} | sed 's/$/#*/' | sed ':a;N;$!ba;s/\n/:/g')
+
+# 因為defectsj是使用1.7的java，而GZoltar是使用java1.8
+# 所以預設bashrc使用java1.7，要執行java1.8的時候就直接export，不要寫在bashrc中。
+export JAVA_HOME=/opt/JDK8/jdk1.8.0_401
+export PATH=$JAVA_HOME/bin:$PATH
+
+# FIXME: Change Test Data Here!
+# 這是剛剛的auto_arc_text.sh所產生的檔案位置，要自己修改。
+TEST_DATA=/home/ncyu/src_and_test_folder/Chart/${PID2}_${BID}/test.txt
+# 這一個處理方式用RELEVANT_TESTS提供的修改。
+TEST_DATA=$(cat ${TEST_DATA} | sed 's/$/#*/' | sed ':a;N;$!ba;s/\n/:/g')
+
+# List test methods
+# output為輸出結果。
+# includes為要輸入的檔案是什麼。
+java -cp ${LIB_DIR}:${GZOLTAR_CLI_JAR} \
+  com.gzoltar.cli.Main listTestMethods \
+  ${TEST_DIR} \
+  --outputFile ${PROJECT_DIR}/listTestMethods.txt \
+  --includes ${TEST_DATA}
+
+SER_FILE=${PROJECT_DIR}/gzoltar.ser
+LOADED_CLASSES_FILE=${D4J_HOME}/framework/projects/${PID2}/loaded_classes/${BID}.src
+NORMAL_CLASSES=$(cat ${LOADED_CLASSES_FILE} | sed 's/$/:/' | sed ':a;N;$!ba;s/\n//g')
+INNER_CLASSES=$(cat ${LOADED_CLASSES_FILE} | sed 's/$/$*:/' | sed ':a;N;$!ba;s/\n//g')
+LOADED_CLASSES=${NORMAL_CLASSES}${INNER_CLASSES}
+
+# Generate .ser file
+# 產生覆蓋資訊的步驟
+java -javaagent:${GZOLTAR_AGENT_JAR}=destfile=${SER_FILE},buildlocation=${SRC_DIR},includes=${LOADED_CLASSES},excludes="",inclnolocationclasses=false,output="file" \
+  -cp ${GZOLTAR_CLI_JAR}:${LIB_DIR} \
+  com.gzoltar.cli.Main runTestMethods \
+  --testMethods ${PROJECT_DIR}/listTestMethods.txt \
+  --collectCoverage 
+
+# Generate report
+# family -> 輸出資料的資料夾名稱
+# formula -> 使用的SBFL公式，官網有提供能用哪些SBFL公式，例如可以改成"jaccard"。
+# family -> 只能使用"sfl"這個名稱，不然會報錯。
+java -cp ${GZOLTAR_CLI_JAR}:${LIB_DIR} \
+  com.gzoltar.cli.Main faultLocalizationReport \
+    --buildLocation ${SRC_DIR} \
+    --granularity line \
+    --inclPublicMethods \
+    --inclStaticConstructors \
+    --inclDeprecatedMethods \
+    --dataFile ${SER_FILE} \
+    --outputDirectory ${PROJECT_DIR} \
+    --family sfl \
+    --formula ochiai \
+    --metric entropy \
+    --formatter txt
+```
